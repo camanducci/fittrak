@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sidebar Sidebar renders 1`] = `
+<v-list-stub dark="">
+  <v-list-tile-stub activeclass="primary--text">
+    <v-list-tile-content-stub>
+      <v-list-tile-title-stub class="title">
+        Heya, <span class="primary--text text--lighten-1">Alice</span></v-list-tile-title-stub>
+    </v-list-tile-content-stub>
+  </v-list-tile-stub>
+  <v-divider-stub></v-divider-stub>
+  <router-link-stub to="/" tag="v-list-tile" event="click">
+    <v-list-tile-action-stub>
+      <v-icon-stub>home</v-icon-stub>
+    </v-list-tile-action-stub>
+    <v-list-tile-content-stub>
+      <v-list-tile-title-stub>Home</v-list-tile-title-stub>
+    </v-list-tile-content-stub>
+  </router-link-stub>
+  <router-link-stub to="/progress" tag="v-list-tile" event="click">
+    <v-list-tile-action-stub>
+      <v-icon-stub>trending_up</v-icon-stub>
+    </v-list-tile-action-stub>
+    <v-list-tile-content-stub>
+      <v-list-tile-title-stub>Progress</v-list-tile-title-stub>
+    </v-list-tile-content-stub>
+  </router-link-stub>
+  <router-link-stub to="/history" tag="v-list-tile" event="click">
+    <v-list-tile-action-stub>
+      <v-icon-stub>history</v-icon-stub>
+    </v-list-tile-action-stub>
+    <v-list-tile-content-stub>
+      <v-list-tile-title-stub>History</v-list-tile-title-stub>
+    </v-list-tile-content-stub>
+  </router-link-stub>
+  <router-link-stub to="/settings" tag="v-list-tile" event="click">
+    <v-list-tile-action-stub>
+      <v-icon-stub>settings</v-icon-stub>
+    </v-list-tile-action-stub>
+    <v-list-tile-content-stub>
+      <v-list-tile-title-stub>Settings</v-list-tile-title-stub>
+    </v-list-tile-content-stub>
+  </router-link-stub>
+  <v-divider-stub></v-divider-stub>
+  <v-list-tile-stub activeclass="primary--text">
+    <v-list-tile-action-stub>
+      <v-icon-stub>notes</v-icon-stub>
+    </v-list-tile-action-stub>
+    <v-list-tile-content-stub>
+      <v-list-tile-title-stub>Release Notes</v-list-tile-title-stub>
+    </v-list-tile-content-stub>
+  </v-list-tile-stub>
+  <v-list-tile-stub activeclass="primary--text">
+    <v-list-tile-action-stub>
+      <v-icon-stub>exit_to_app</v-icon-stub>
+    </v-list-tile-action-stub>
+    <v-list-tile-content-stub>
+      <v-list-tile-title-stub>Sign out</v-list-tile-title-stub>
+    </v-list-tile-content-stub>
+  </v-list-tile-stub>
+</v-list-stub>
+`;

@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loader Loader renders 1`] = `
+<v-flex-stub tag="div" text-xs-center="">
+  <v-progress-circular-stub indeterminate="true" rotate="0" size="48" width="4" value="0" color="red"></v-progress-circular-stub>
+</v-flex-stub>
+`;

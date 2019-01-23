@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppSnackbar AppSnackbar renders 1`] = `
+<v-snackbar-stub timeout="7000" bottom="true" color="success">
+
+  <v-btn-stub activeclass="v-btn--active" flat="true" tag="button" type="button">
+    Close
+  </v-btn-stub>
+</v-snackbar-stub>
+`;

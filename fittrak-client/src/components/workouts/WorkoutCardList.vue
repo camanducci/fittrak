@@ -11,6 +11,7 @@
     >
       <v-flex
         xs12
+        sm6
         md4
         :key="workout.id"
       > 

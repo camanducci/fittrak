@@ -49,7 +49,7 @@
     <div class="status">
       <v-chip 
         label 
-        v-bind="{[`color`]: `${workout.color}`}"
+        v-bind="{[`color`]: statusColor }"
         dark
       >
         <v-icon left>{{ statusIcon }}</v-icon>
@@ -101,6 +101,8 @@ import {
   CANCELLED
 } from "@/constants";
 
+import { getStatusColor } from "@/helpers";
+
 import { format, distanceInWords } from "date-fns";
 
 export default {
@@ -120,6 +122,10 @@ export default {
       return distanceInWords(new Date(), data.workout.dateStarted, {
         addSuffix: true
       });
+    },
+
+    statusColor: data => {
+      return getStatusColor(data.workout.status);
     },
 
     ended: data => {

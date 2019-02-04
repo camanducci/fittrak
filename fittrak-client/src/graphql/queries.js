@@ -24,6 +24,7 @@ const workoutsQuery = gql`
       status
       slug
       exerciseCount
+      setCount
     }
   }
 `;

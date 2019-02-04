@@ -19,16 +19,19 @@
           md6 
           xs12>
           <div> 
-            Time Spent:
+            Time spent:
           </div>
           <div>
-            Total Weight:
+            Total weight:
           </div>
           <div>
             Type:
           </div>
           <div>
-            Exercises:
+            Exercise count:
+          </div>
+          <div>
+            Set count:
           </div>
         </v-flex>
 
@@ -41,6 +44,7 @@
           <div>250lbs</div>
           <div>Custom</div>
           <div>{{ workout.exerciseCount }}</div>
+          <div>{{ workout.setCount }}</div>
         </v-flex>
       </v-layout>
 

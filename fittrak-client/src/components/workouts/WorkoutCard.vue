@@ -1,47 +1,46 @@
 <template>
   <v-card
-    :color="workout.color"
-    dark
+    :color="white"
     @click.stop="viewWorkout"
   >
     <v-card-title primary-title> 
-      <span class="headline">{{ started }}</span>
+      <span class="headline">{{ timeAgo }} <span class="subheading grey--text text--darken-1">(on {{ started }})</span></span>
     </v-card-title>
 
     <v-divider light />
 
     <v-card-text>
-      <v-layout
+      <span class="subheading">Highlights</span>
+      <v-layout 
         row 
-      >
+        ma-1>
         <v-flex 
-          class="subheading" 
+          class="subheading grey--text text--darken-2" 
           md6 
           xs12>
           <div> 
-            Time Spent <span :class="relativeDarkness">Test</span>
+            Time Spent:
           </div>
           <div>
-            Total Weight
+            Total Weight:
           </div>
           <div>
-            Type: Custom
+            Type:
           </div>
           <div>
-            Exercises: {{ workout.exerciseCount }}
+            Exercises:
           </div>
         </v-flex>
 
         <v-flex 
-          class="subheading" 
+          class="subheading"
           md6 
-          xs12>
-          <div>
-            Created on {{ workout.created_at }}
-          </div>
-          <div>
-            Last updated {{ workout.updated_at }}
-          </div>
+          xs12
+        >
+          <div>120min</div>
+          <div>250lbs</div>
+          <div>Custom</div>
+          <div>{{ workout.exerciseCount }}</div>
         </v-flex>
       </v-layout>
 
@@ -50,7 +49,8 @@
     <div class="status">
       <v-chip 
         label 
-        v-bind="{[`color`]: `${workout.color} darken-2`}"
+        v-bind="{[`color`]: `${workout.color}`}"
+        dark
       >
         <v-icon left>{{ statusIcon }}</v-icon>
         {{ getHumanStatus }}
@@ -62,10 +62,12 @@
     <v-card-actions>
       <v-toolbar 
         flat 
-        dark 
-        :color="workout.color">
+        light
+        color="white"
+      >
 
         <v-btn 
+          class="grey--text text--darken-2"
           icon>
           <v-icon>share</v-icon>
         </v-btn>
@@ -73,10 +75,12 @@
         <v-spacer />
 
         <v-btn 
+          class="grey--text text--darken-2"
           icon>
           <v-icon>favorite</v-icon>
         </v-btn>
         <v-btn 
+          class="grey--text text--darken-2"
           @click.stop="removeWorkout"
           icon>
           <v-icon>delete</v-icon>
@@ -97,8 +101,7 @@ import {
   CANCELLED
 } from "@/constants";
 
-import { format } from "date-fns";
-import distanceInWords from "date-fns/distance_in_words";
+import { format, distanceInWords } from "date-fns";
 
 export default {
   name: "WorkoutCard",
@@ -110,6 +113,10 @@ export default {
     },
 
     started: data => {
+      return format(data.workout.dateStarted, "YYYY-MM-DD [@] h:MMA");
+    },
+
+    timeAgo: data => {
       return distanceInWords(new Date(), data.workout.dateStarted, {
         addSuffix: true
       });
@@ -130,6 +137,10 @@ export default {
         [CANCELLED]: "cancel",
         [COMPLETE]: "check_circle"
       }[data.workout.status];
+    },
+
+    borderColor: data => {
+      return `5px solid ${data.workout.color}`;
     },
 
     relativeDarkness: data => {

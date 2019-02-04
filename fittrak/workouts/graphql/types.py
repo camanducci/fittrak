@@ -48,6 +48,7 @@ class WorkoutFieldInputType(graphene.InputObjectType):
 
 class WorkoutType(DjangoObjectType):
     exercise_count = graphene.Int()
+    set_count = graphene.Int()
 
     class Meta:
         model = Workout
@@ -55,6 +56,12 @@ class WorkoutType(DjangoObjectType):
     @staticmethod
     def resolve_exercise_count(workout, info):
         return workout.exercises.count()
+
+    @staticmethod
+    def resolve_set_count(workout, info):
+        exercise_ids = workout.exercises.values_list("id")
+        sets = Set.objects.filter(exercise__in=exercise_ids)
+        return sets.count()
 
 
 class ExerciseInputType(graphene.InputObjectType):

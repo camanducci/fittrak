@@ -3,7 +3,7 @@
     flat 
     color="mainBg"> 
     <v-card-title>
-      <span class="headline grey--text text--darken-2">Latest</span>
+      <span class="headline grey--text text--darken-2">Latest Workouts</span>
       <v-spacer />
       <v-menu 
         bottom 
